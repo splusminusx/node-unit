@@ -10,6 +10,8 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:splusminusx/node-unit.git"
+  },
+  "dependencies": {
+    "node-async": "0.7.1"
   }
 }
-

@@ -1,0 +1,36 @@
+var async = require('node-async');
+var Test = require('../test/self.js')
+
+%%make -s index.js-compile%%
+
+module.exports = unit;
+
+(function() {
+  var reporter = new unit.report.FlatReporter('suite');
+  var runner = new unit.Runner();
+
+  function printResult(reporter) {
+    console.log(reporter.getComment() + '\n\n');
+    console.log('Tests started:', reporter.getResults().length);
+    console.log('Tests failed:', unit.result.filterAssertions(
+        reporter.getResults(), false).length);
+    console.log('Assertions:', reporter.getAssertions().length);
+    console.log('Assertions failed:', unit.result.filterAssertions(
+        reporter.getAssertions(), false).length);
+  }
+
+  function exit() {
+    var exitCode = reporter.get() ? 0 : 1;
+    printResult(reporter);
+    process.exit(exitCode);
+  }
+
+  process.addListener('uncaughtException', function(error) {
+    reporter.addAssertion(new unit.result.Assertion(false,
+          'Error [uncaughtException ' + error.code +']:' + error.message));
+    exit();
+  });
+
+  runner.case(new Test());
+  runner.call(reporter, null, exit, exit)
+})();

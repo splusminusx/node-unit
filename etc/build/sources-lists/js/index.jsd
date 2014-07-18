@@ -1,2 +1,23 @@
 unit/unit.js
 
+unit/result/i-assertion.js
+unit/result/i-assertion-factory.js
+unit/result/i-result.js
+unit/result/assertion.js
+unit/result/assertion-factory.js
+unit/result/result.js
+
+unit/i-case.js
+unit/i-case-factory.js
+unit/i-context.js
+unit/i-runner.js
+
+unit/case.js
+unit/runner.js
+unit/suite.js
+
+unit/report/i-reporter.js
+unit/report/reporter.js
+unit/report/flat-reporter.js
+unit/report/i-reporter-factory.js
+unit/report/reporter-factory.js
