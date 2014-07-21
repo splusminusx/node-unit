@@ -17,3 +17,7 @@ unit/report/i-reporter.js
 unit/report/reporter.js
 unit/report/flat-reporter.js
 unit/report/report.js
+
+unit/test/test.js
+unit/test/state.js
+unit/test/reflection.js
