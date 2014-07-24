@@ -8,18 +8,5 @@ module.exports = unit;
 
 
 (function() {
-  function exit() {
-    var reporter = unit.test.getReporter();
-    var exitCode = reporter.get() ? 0 : 1;
-    unit.report.print(reporter);
-    process.exit(exitCode);
-  }
-
-  process.addListener('uncaughtException', function(error) {
-    unit.test.getReporter().addAssertion(new unit.result.Assertion(false,
-          'Error [uncaughtException ' + error.code +']:' + error.message));
-    exit();
-  });
-
-  unit.test.call(null, null, exit, exit)
+  unit.test.call()
 })();

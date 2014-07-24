@@ -8,10 +8,12 @@ unit/result/result.js
 unit/i-case.js
 unit/i-context.js
 unit/i-runner.js
+unit/i-suite.js
 
 unit/case.js
 unit/runner.js
 unit/suite.js
+unit/node-suite.js
 
 unit/report/i-reporter.js
 unit/report/reporter.js
