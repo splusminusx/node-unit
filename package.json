@@ -1,5 +1,5 @@
 {
-  "name": "Node-Unit",
+  "name": "node-unit",
   "version": "0.0.1",
   "description": "async javascript unit test framework",
   "main": "bin/index.js",
